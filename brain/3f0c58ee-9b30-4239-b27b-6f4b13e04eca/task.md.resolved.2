@@ -1,0 +1,14 @@
+# タスク: API連携の安定化と投稿エンジンの高度化
+
+- [x] **Phase 1: 認証・設定系の強化**
+    - [x] `non-blocking-login.tsx` でリフレッシュトークンの取得・保存を実装
+    - [x] `integrations-form.tsx` に Pinterest Client ID 入力欄を追加
+- [/] **Phase 2: Threads ツリー投稿の洗練**
+    - [/] `threads-post/route.ts` のリプライ文言調整と動作確認
+- [ ] **Phase 3: はてなブログ等のフォーマット修正**
+    - [ ] `hatena-post/route.ts` の HTML 構成修正（CDATA保護など）
+- [ ] **Phase 4: Blogger API の自動更新ロジック**
+    - [ ] `blogger-api.ts` のトークン更新ロジック実装
+- [ ] **Phase 5: 最終疎通確認**
+    - [ ] 全プラットフォームへの一括投稿テスト
+    - [ ] Bloggerの自動更新テスト

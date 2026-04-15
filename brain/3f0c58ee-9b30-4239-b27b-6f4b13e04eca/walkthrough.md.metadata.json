@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_WALKTHROUGH",
+  "summary": "OpenRouter (Gemma 2) 連携機能の実装完了。環境変数、モデルリスト、接続ロジック、および UI プレビューへの統合を行いました。",
+  "updatedAt": "2026-04-13T23:29:05.897197900Z",
+  "version": "1"
+}
