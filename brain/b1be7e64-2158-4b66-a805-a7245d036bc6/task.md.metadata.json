@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_TASK",
+  "summary": "メール認証フローとStripeの埋め込み決済（Embedded Checkout）、および管理者権限の自動付与をすべて完了しました。",
+  "updatedAt": "2026-04-17T03:03:26.889934600Z",
+  "version": "11"
+}

@@ -1,0 +1,20 @@
+# 実装タスク：Stripeサブスクリプション & 管理者パネル機能
+
+- [x] パッケージのインストール: `stripe` パッケージをプロジェクトに追加する。
+- [x] Firestore セキュリティルールの更新: 管理者パネル（system/config, system/stripe など）へのアクセス制御（`roles_admin`またはハードコードされたUID）を整備。
+- [x] 管理者パネル UI の実装 (`src/app/admin/page.tsx`):
+  - [x] 指定のアドレス（oumaumauma32@gmail.com, sl0wmugi9@gmail.com）のみアクセス可能にする制限処理。
+  - [x] Stripe設定（各種APIキー、Webhookシークレット、Price ID等）を登録・保存するフォームの実装。
+  - [x] 招待ユーザー（クレカスルー対象）のメールアドレス一覧を管理するインターフェース。
+  - [x] プライバシーポリシーの本文を入力・保存するエディタ環境の追加。
+- [x] プライバシーポリシーページ (`src/app/privacy/page.tsx`):
+  - [x] 管理者パネルで保存された内容をFirestoreから読み取り、表示するページを作成。
+  - [x] トップページやフッターへリンクを追加。
+- [x] サインアップ・ログイン決済フローの制御:
+  - [x] ユーザー登録後、招待ユーザーリストと照合。
+  - [x] 一般ユーザーで決済が住んでいない（`subscriptionStatus !== 'active' && !== 'trialing'`）場合は、サービスの主要機能を隠すかダミー画面で覆って Stripe Checkout への移動ボタンを表示。
+- [x] Stripe API エンドポイントの実装:
+  - [x] `POST /api/stripe/checkout`: ダッシュボードからの要求に応じ、サーバーサイドでStripe セッションを作成（Stripe設定はFirestoreから取得）。
+  - [x] `POST /api/stripe/webhook`: Stripeからのイベント（checkout.session.completed, customer.subscription.updated 等）を受信し、ユーザーのFirestoreデータを更新。
+- [x] プラン制限の実装:
+  - [x] `subscriptionStatus` と `plan` (standard / pro) によって、メインアプリ内のスタジオ2/3のアクセスやAPI連携の利用可否を出し分ける。

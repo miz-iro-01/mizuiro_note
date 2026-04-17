@@ -1,0 +1,36 @@
+# 投稿不具合の徹底修正と機能改善プラン
+
+ユーザーから報告された「Blogger/WordPressの投稿エラー」「はてなブログの画像・表示不備」「Threadsの文字数制限」に対応します。
+
+## ユーザーレビューが必要
+- **Threadsの文字数**: 指示通り250文字以内に変更しますが、Meta APIの制限（500文字）内であるため、より余裕を持った魅力的な文章をAIに生成させます。
+- **はてなブログのフォーマット**: 現在Markdownがそのまま表示されている（文章に `*` が入っている）問題を、HTML形式での投稿に統一することで解決します。
+
+## 提案された変更
+
+---
+
+### [AIフローの改善]
+#### [MODIFY] [generate-blog-post.ts](file:///c:/Users/user/.gemini/antigravity/mizuiroaout/src/ai/flows/generate-blog-post.ts)
+- **Threads文字数**: 指示通り「250文字程度」になるようプロンプトを修正します。
+- **はてなブログ不備修正**: 文中の「*」はMarkdownの太字等がそのまま出ている可能性があるため、はてなブログ側でHTMLとして受けるよう処理を確実にします。
+
+---
+
+### [はてなブログ投稿の画像対応]
+#### [MODIFY] [hatena-post/route.ts](file:///c:/Users/user/.gemini/antigravity/mizuiroaout/src/app/api/hatena-post/route.ts)
+- 現在はHTMLをCDATAで送っていますが、画像タグ（`<img>`）がはてなブログ側で除去されないよう、またMarkdownの記号が残らないよう、投稿本文の処理を再点検します。
+
+---
+
+### [Blogger & WordPress 投稿エラー修正]
+#### [MODIFY] [blog-post-view.tsx](file:///c:/Users/user/.gemini/antigravity/mizuiroaout/src/app/dashboard/content-studio/components/blog-post-view.tsx)
+- **Blogger**: 「Request had invalid authentication credentials」の原因（OAuthトークンの失効またはスコープ不足）を解決するため、トークンが古い場合に再認証を促す仕組み、またはリフレッシュトークンの扱いを点検します。
+- **WordPress**: 「正しいデータ(JSON)が返されませんでした」のエラーの原因である、取得データのパース失敗（HTMLが返ってきている可能性）を解決するため、URLの正規化（`/wp-json/` の自動補完）をより厳密に行います。
+
+## オープンな質問
+- **WordPressのURL**: スクリーンショットで「`Linked`」となっていますが、URLの最後に `/`（スラッシュ）は付いていますか？また、パーマリンク設定は「基本」以外（投稿名など）になっていますか？
+
+## 検証プラン
+- **ログ確認**: 投稿失敗時のレスポンスの詳細をコンソールに出力し、原因を特定。
+- **プレビュー比較**: はてなブログに投稿した際、画像が正しく表示され、Markdown記号が消えているかを確認。

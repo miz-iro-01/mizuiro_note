@@ -1,0 +1,20 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+MIZUIRO
+[0] (383,45)<a class='transition-colors hover:text-primary' href='#features'>機能 />
+[1] (445,45)<a class='transition-colors hover:text-primary' href='#how-it-works'>使い方 />
+[2] (519,45)<a class='transition-colors hover:text-primary' href='#benefits'>メリット />
+[3] (787,45)<a class='items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 hidden sm:inline-flex' href='/login'>ログイン />
+[4] (895,45)<a class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:scale-105 active:scale-100' href='/signup'>無料で始める />
+AIでアフィリエイトを自動化
+楽天商品から、
+一瞬
+でブログとSNSへ。
+-MIZUIRO- は、楽天アフィリエイトの商品リサーチ、ブログ記事の生成、
+そしてPinterestやThreadsへの投稿をAIで完全にサポートするオールインワンツールです。
+[5] (414,827)<a class='inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 rounded-md h-14 px-10 text-lg shadow-xl shadow-primary/20 ring-1 ring-primary/50 transition-all hover:scale-105' href='/signup'>今すぐ無料で開始 />
+[6] (625,827)<a class='inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background hover:text-accent-foreground rounded-md h-14 px-10 text-lg backdrop-blur-sm border-border/50 hover:bg-background/50 transition-all' href='#features'>機能を見る />
+
+</current_dom>

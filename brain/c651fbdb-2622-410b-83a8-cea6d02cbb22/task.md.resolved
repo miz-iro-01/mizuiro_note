@@ -1,0 +1,5 @@
+- [ ] `openrouter_think.py` スキルの作成
+- [ ] `AGENTS.md` の更新（思考ガイドラインの追加）
+- [ ] `AI_TOKEN_OPTIMIZATION_GUIDE.md` の作成（他ツール用ガイド）
+- [ ] 動作検証と成果の確認
+- [ ] ウォークスルーの作成
