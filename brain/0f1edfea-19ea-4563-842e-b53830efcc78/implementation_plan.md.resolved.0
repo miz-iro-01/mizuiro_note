@@ -1,0 +1,54 @@
+# Stripe設定の保存失敗（権限不足）の修正プラン
+
+Stripe設定を保存しようとした際に「Missing or insufficient permissions」（権限不足）エラーが発生する問題を解決します。
+
+## 現状の分析
+- **エラーの原因**: Firestoreのセキュリティルールで `/system/stripe` への書き込みに `isAdmin()` 権限が必要ですが、現在の `isAdmin()` 定義が不完全（あるいは期待通りに動作していない）可能性があります。
+- **現在のルール**:
+  ```javascript
+  function isAdmin() {
+    return isSignedIn() && (
+      request.auth.token.email == 'oumaumauma32@gmail.com' || 
+      request.auth.token.email == 'sl0wmugi9@gmail.com' || 
+      exists(/databases/$(database)/documents/roles_admin/$(request.auth.uid))
+    );
+  }
+  ```
+- **推測される問題**: 
+  - `request.auth.token.email` が常に期待通りに取得できていない（特にメール認証前や一部のプロバイダ）。
+  - または、ユーザーがリストにないメールアドレスを使用している。
+  - フロントエンドの `ADMIN_EMAILS` リストとセキュリティルールのリストが同期されていない（今後のメンテナンス性の問題）。
+
+## 提案される変更
+
+### 1. セキュリティルールの強化と共通化
+
+`isAdmin()` ルールの信頼性を高めるため、フロントエンドと同期したハードコードされたリストだけでなく、Firestoreドキュメントベースの判定を確実に機能させます。
+
+#### [MODIFY] [firestore.rules](file:///c:/Users/user/.gemini/antigravity/mizuiroaout/firestore.rules)
+- `isAdmin()` 関数の判定ロジックを整理し、デバッグしやすいようにします。
+- 必要に応じて、管理者のメールアドレスリストを更新します（ユーザーが提供する正しいメールアドレスに合わせて）。
+
+### 2. 管理者判定ロジックの堅牢化（フロントエンド）
+
+現在 `AdminPage` ([page.tsx](file:///c:/Users/user/.gemini/antigravity/mizuiroaout/src/app/admin/page.tsx)) でハードコードされている `ADMIN_EMAILS` が、ルール側と一致しているか再確認します。
+
+#### [MODIFY] [page.tsx](file:///c:/Users/user/.gemini/antigravity/mizuiroaout/src/app/admin/page.tsx)
+- 管理者メールアドレスのリストが最新であることを確認します。
+
+## ユーザーへの確認事項
+
+> [!IMPORTANT]
+> 現在テストに使用しているメールアドレスを教えていただけますか？
+> 送信されたスクリーンショットから、ログイン中のユーザーが `isAdmin()` の条件（`oumaumauma32@gmail.com` または `sl0wmugi9@gmail.com`）を満たしていないことが原因の可能性が高いです。
+
+> [!TIP]
+> もし別のメールアドレスでテストされている場合、そのアドレスを管理者リストに追加する必要があります。
+
+## 検証プラン
+
+### 自動テスト
+- ブラウザサブエージェントを使用して、Stripe設定の保存を再試行し、エラーが解消されたか確認します。
+
+### 手動確認
+- ユーザーに特定のアドレスでログインしていただき、保存ができるか確認を依頼します。

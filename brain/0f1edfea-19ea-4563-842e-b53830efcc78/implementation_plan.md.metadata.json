@@ -1,0 +1,7 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "3つの新機能追加プラン：\n1. 管理者パネルのタブ移動時に未保存変更確認ダイアログ\n2. 商品検索にAmazonアソシエイト（PA-API v5）を追加\n3. 出力連携先に楽天Room（半自動方式）を追加",
+  "updatedAt": "2026-04-18T04:20:03.237203300Z",
+  "version": "1",
+  "requestFeedback": true
+}

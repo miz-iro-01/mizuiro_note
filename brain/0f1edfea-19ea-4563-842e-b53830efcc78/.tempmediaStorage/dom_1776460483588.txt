@@ -1,0 +1,48 @@
+[0] (80,44)<a class='flex items-center gap-2 font-semibold' href='/dashboard'>-MIZUIRO- Rakuten Auto Afi />
+	[1] (80,44)<div  />
+		[2] (40,44)<div  />
+			[3] (40,44)<img  />
+		[4] (103,44)<span >MIZUIRO />
+	-MIZUIRO- Rakuten Auto Afi
+[5] (117,145)<a class='flex items-center gap-3 rounded-lg px-3 py-3 text-card-foreground/70 transition-all hover:bg-primary/10 hover:text-primary' href='/dashboard' />
+	[6] (107,145)<span >ダッシュボード />
+[7] (117,218)<a class='flex items-center gap-3 rounded-lg px-3 py-3 text-card-foreground/70 transition-all hover:bg-primary/10 hover:text-primary' href='/dashboard/content-studio' />
+	[8] (121,218)<span >コンテンツスタジオ />
+[9] (117,291)<a class='flex items-center gap-3 rounded-lg px-3 py-3 text-card-foreground/70 transition-all hover:bg-primary/10 hover:text-primary' href='/dashboard/personas' />
+	[10] (99,291)<span >ペルソナ設計 />
+[11] (117,364)<a class='flex items-center gap-3 rounded-lg px-3 py-3 text-card-foreground/70 transition-all hover:bg-primary/10 hover:text-primary' href='/dashboard/history' />
+	[12] (70,364)<span >履歴 />
+[13] (117,436)<a class='flex items-center gap-3 rounded-lg px-3 py-3 transition-all hover:bg-primary/10 hover:text-primary bg-primary/10 font-medium text-primary' href='/dashboard/settings' />
+	[14] (70,436)<span >設定 />
+[15] (117,509)<a class='flex items-center gap-3 rounded-lg px-3 py-3 text-card-foreground/70 transition-all hover:bg-primary/10 hover:text-primary' href='/admin' />
+	[16] (99,509)<span >管理者パネル />
+Proにアップグレード
+全ての機能を開放し、サポートチームへの無制限アクセスを手に入れましょう。
+[17] (117,929)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 w-full'>アップグレード />
+[18] (855,44)<button class='items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 hidden sm:flex'>アップグレード />
+[19] (960,44)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-10 w-10 rounded-full' id='radix-_r_8_'>ユーザーメニューを開く />
+	[20] (960,44)<span  />
+		[21] (960,44)<img  />
+	ユーザーメニューを開く
+高度な設定
+システムの連携設定、APIキー、サブスクリプションを管理します。
+[22] (302,274)<button class='inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm' id='radix-_r_h_-trigger-integrations' role='tab'>API連携 />
+[23] (406,274)<button class='inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm' id='radix-_r_h_-trigger-subscription' role='tab'>サブスクリプション />
+API連携
+楽天APIやGoogle APIの鍵、その他のSNS連携設定を管理します。
+[24] (351,491)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 rounded-md px-6 h-8 text-xs font-bold'>スタジオ
+1
+設定 />
+[25] (497,491)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground rounded-md px-6 h-8 text-xs font-bold'>スタジオ
+2
+設定 />
+	[26] (541,491)<span >PRO />
+[27] (660,491)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground rounded-md px-6 h-8 text-xs font-bold'>スタジオ
+3
+設定 />
+	[28] (705,491)<span >PRO />
+[29] (374,616)<label class='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'>楽天アフィリエイトID />
+[30] (458,671)<input class='flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm' id='_r_v_-form-item' placeholder='楽天アフィリエイトから取得したID' />
+自動生成される商品リンクに埋め込む自分のIDです。「楽天ウェブサービス」の設定画面にログインし、「アフィリエイトID」欄に表示されている文字列をコピーして貼り付けてください。
+[31] (458,853)<a class='text-sm text-primary hover:underline' href='https://webservice.rakuten.co.jp/account_affiliate_id/'>楽天アフィリエイトIDを確認する → />
+[32] (365,918)<label class='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'>Google AI APIキー />
