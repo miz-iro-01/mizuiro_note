@@ -1,0 +1,73 @@
+# 修正と改善の実装計画
+
+ユーザーの皆様から報告された複数の不具合の修正、および使い勝手を向上させるための画面改善や機能強化を行います。
+
+## User Review Required
+
+> [!WARNING]
+> **Bloggerの「自動更新」について重要なお知らせがあります。**
+> Firebaseを使用した現在のGoogle認証（OAuth）では、セキュリティ上の制約により**1時間でトークンが切断され、裏側で自動的に再取得（リフレッシュ）することがシステム上できません**（サーバー側にGoogleの秘密鍵を設定する本格的なアプリ構築が必要です）。
+> そのため、「自動更新モード」という誤解を招く表記を削除し、**「秘密メールを使用して投稿」**をメインの自動化機能として推奨するよう画面を修正します（秘密メールを使えば、一度設定すれば有効期限なく完全自動・裏側で投稿が可能です）。この方針で進めてよろしいでしょうか？
+
+> [!IMPORTANT]
+> **WordPressの投稿エラーについて**
+> 指定されたURLで「正しいデータ（JSON）が返されませんでした」となるのは、**WordPress側の「REST API」という機能が正常に動いていない**ためです。
+> 原因のほとんどは以下の2つです：
+> 1. セキュリティプラグイン（SiteGuardなど）やサーバー側のWAF設定がAPI通信をブロックしている。
+> 2. パーマリンク設定が「基本（?p=123）」になっておりAPIが有効化されていない。（「投稿名」などに変更すると直ります）
+> プログラム側でのエラー表示をより明確にしますが、ご自身のWordPress側の設定をご確認ください。
+
+
+## Proposed Changes
+
+---
+
+### UI・設定・アカウント権限関連
+
+#### [MODIFY] integrations-form.tsx (file:///c:/Users/user/.gemini/antigravity/mizuiroaout/src/app/dashboard/settings/components/integrations-form.tsx)
+- 「楽天」「Amazon」「Google API」の入力項目をそれぞれ独立したカード（ブロック）に分割して視認性を向上させます。
+- Amazonの設定ブロックに、ユーザー指定のPA API利用条件（承認済みアカウント、規約遵守、過去30日間の売上条件等）の注意書きを追加します。
+- Bloggerの項目から「自動更新モード」というテキストを削除し、「秘密メールを使うと再認証不要で永久に自動投稿できる」という説明を強調します。
+- これにより、設定画面にスタジオ２と３へのタブが表示されていても権限さえ合っていれば違和感なく使用できるように表示を最適化します。
+
+#### [MODIFY] sidebar.tsx (file:///c:/Users/user/.gemini/antigravity/mizuiroaout/src/components/layout/sidebar.tsx)
+- 管理者パネルのメニューが、一般ユーザーにも見えてしまっている問題を修正します。現在ログインしているユーザーのメールアドレスが `ADMIN_EMAILS` に含まれる場合のみ表示するよう制御を追加します。
+
+#### [MODIFY] layout.tsx (file:///c:/Users/user/.gemini/antigravity/mizuiroaout/src/app/dashboard/layout.tsx)
+- 指定された管理者メールアドレスが確実に「Pro機能（スタジオ2、3など）」をフル利用できるよう、権限判定処理を強化・修正します。
+
+---
+
+### コンテンツスタジオ機能拡張
+
+#### [MODIFY] page.tsx (file:///c:/Users/user/.gemini/antigravity/mizuiroaout/src/app/dashboard/content-studio/page.tsx)
+- スタジオ2、3を開く際のPro機能チェックロジックを修正し、管理者ユーザーがブロックされないように直します。
+
+#### [MODIFY] post-generator.tsx (file:///c:/Users/user/.gemini/antigravity/mizuiroaout/src/app/dashboard/content-studio/components/post-generator.tsx)
+- 各スタジオスロット（1,2,3）ごとに「どのペルソナを選択していたか」をローカルストレージ等に自動保存し、次回開いた際に復元するように修正します。これにより、別々のペルソナを持つスタジオの運用が容易になります。
+
+#### [MODIFY] blog-post-view.tsx (file:///c:/Users/user/.gemini/antigravity/mizuiroaout/src/app/dashboard/content-studio/components/blog-post-view.tsx)
+- 各スタジオスロットごとに「どの投稿先（Blogger、Threadsなど）にチェックを入れていたか」の選択状態を自動保存・復元するように修正します。
+- **はてなブログの画像問題:** ブログ記事の先頭（トップ画像）に、商品詳細ではなく商品のメイン画像が選ばれるよう、画像選択優先ロジックを修正します。
+
+---
+
+### 自動投稿APIの修正
+
+#### [MODIFY] route.ts (Threads投稿) (file:///c:/Users/user/.gemini/antigravity/mizuiroaout/src/app/api/threads-post/route.ts)
+- Threadsへ画像付き投稿を行う際、ドキュメントの仕様上 `caption` ではなく `text` として本文を送るよう修正します。これにより、画像のみにならずプレビュー画像＋テキストの両方が正しく投稿されるようになります。
+
+## Open Questions
+
+- Bloggerの自動投稿については、エラー対応の観点からも「秘密メール」を使用することを推奨する形にUIを変更させていただいてよろしいでしょうか？
+- その他、今回の修正方針で問題ないかご確認をお願いいたします。
+
+## Verification Plan
+
+### Manual Verification
+- 修正完了後、以下の手順で動作を確認します：
+  - 設定ページで「楽天」「Amazon」「Google API」が分かれて表示されているか
+  - 管理者以外のアカウントで管理者メニューが非表示になっているか
+  - Threadsで画像とテキストの両方が投稿されるか
+  - コンテンツスタジオで、スロットを切り替えた際に選んでいたペルソナと出力先のチェックボックスが維持されるか
+  - はてなブログに投稿される記事の先頭画像が正しいか
