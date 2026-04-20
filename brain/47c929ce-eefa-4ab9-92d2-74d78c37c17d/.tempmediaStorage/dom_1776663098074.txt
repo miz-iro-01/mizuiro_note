@@ -1,0 +1,54 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (80,44)<a class='flex items-center gap-2 font-semibold' href='/dashboard'>-MIZUIRO- Rakuten Auto Afi />
+	[1] (80,44)<div  />
+		[2] (40,44)<div  />
+			[3] (40,44)<img  />
+		[4] (103,44)<span >MIZUIRO />
+	-MIZUIRO- Rakuten Auto Afi
+[5] (117,145)<a class='flex items-center gap-3 rounded-lg px-3 py-3 text-card-foreground/70 transition-all hover:bg-primary/10 hover:text-primary' href='/dashboard' />
+	[6] (107,145)<span >ダッシュボード />
+[7] (117,218)<a class='flex items-center gap-3 rounded-lg px-3 py-3 transition-all hover:bg-primary/10 hover:text-primary bg-primary/10 font-medium text-primary' href='/dashboard/content-studio' />
+	[8] (121,218)<span >コンテンツスタジオ />
+[9] (117,291)<a class='flex items-center gap-3 rounded-lg px-3 py-3 text-card-foreground/70 transition-all hover:bg-primary/10 hover:text-primary' href='/dashboard/personas' />
+	[10] (99,291)<span >ペルソナ設計 />
+[11] (117,364)<a class='flex items-center gap-3 rounded-lg px-3 py-3 text-card-foreground/70 transition-all hover:bg-primary/10 hover:text-primary' href='/dashboard/history' />
+	[12] (70,364)<span >履歴 />
+[13] (117,436)<a class='flex items-center gap-3 rounded-lg px-3 py-3 text-card-foreground/70 transition-all hover:bg-primary/10 hover:text-primary' href='/dashboard/settings' />
+	[14] (70,436)<span >設定 />
+[15] (117,509)<a class='flex items-center gap-3 rounded-lg px-3 py-3 text-card-foreground/70 transition-all hover:bg-primary/10 hover:text-primary' href='/admin' />
+	[16] (99,509)<span >管理者パネル />
+Proにアップグレード
+全ての機能を開放し、サポートチームへの無制限アクセスを手に入れましょう。
+[17] (117,929)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 w-full'>アップグレード />
+[18] (855,44)<button class='items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 hidden sm:flex'>アップグレード />
+[19] (960,44)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-10 w-10 rounded-full' id='radix-_r_c_'>ユーザーメニューを開く />
+	[20] (960,44)<span  />
+		[21] (960,44)<img  />
+	ユーザーメニューを開く
+商品検索
+キーワードで楽天・Amazonの商品を検索し、投稿の元になる商品を選択します。
+[22] (393,189)<button class='inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm' id='radix-_r_i_-trigger-rakuten' role='tab'>楽天市場 />
+[23] (597,189)<button class='inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm' id='radix-_r_i_-trigger-amazon' role='tab'>Amazon />
+[24] (449,267)<input class='flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm' id='_r_l_-form-item' placeholder='検索キーワード (例: 'ワイヤレスイヤホン')' />
+検索
+楽天
+から商品を検索中...
+AI投稿ジェネレーター
+トピックとペルソナから魅力的なSNS投稿を作成します。商品を選択すると、トピックが自動入力されます。
+[25] (313,738)<label class='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'>トピック />
+[26] (388,793)<input class='flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm' id='_r_m_-form-item' placeholder='例: '春におすすめの日本の旅行先トップ5'' />
+[27] (528,738)<label class='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'>ペルソナ />
+[28] (602,793)<button class='flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1' id='_r_n_-form-item' role='combobox'>ペルソナを選択してください />
+	ペルソナを選択してください
+[29] (349,894)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2'>投稿を生成 />
+AIトレンドアナライザー
+PinterestとThreadsでクリックされやすいトピックを見つけます。
+[30] (845,252)<input class='flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm' placeholder='例: 'サステナブルな暮らし'' />
+[31] (934,252)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10'>分析 />
+	分析
+上の欄にトピックを入力して、トレンドのコンテンツアイデアを見つけましょう。
+
+</current_dom>

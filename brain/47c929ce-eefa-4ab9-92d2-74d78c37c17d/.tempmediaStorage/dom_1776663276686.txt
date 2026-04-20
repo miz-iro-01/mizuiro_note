@@ -1,0 +1,63 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (80,44)<a class='flex items-center gap-2 font-semibold' href='/dashboard'>-MIZUIRO- Rakuten Auto Afi />
+	[1] (80,44)<div  />
+		[2] (40,44)<div  />
+			[3] (40,44)<img  />
+		[4] (103,44)<span >MIZUIRO />
+	-MIZUIRO- Rakuten Auto Afi
+[5] (117,145)<a class='flex items-center gap-3 rounded-lg px-3 py-3 text-card-foreground/70 transition-all hover:bg-primary/10 hover:text-primary' href='/dashboard' />
+	[6] (107,145)<span >ダッシュボード />
+[7] (117,218)<a class='flex items-center gap-3 rounded-lg px-3 py-3 transition-all hover:bg-primary/10 hover:text-primary bg-primary/10 font-medium text-primary' href='/dashboard/content-studio' />
+	[8] (121,218)<span >コンテンツスタジオ />
+[9] (117,291)<a class='flex items-center gap-3 rounded-lg px-3 py-3 text-card-foreground/70 transition-all hover:bg-primary/10 hover:text-primary' href='/dashboard/personas' />
+	[10] (99,291)<span >ペルソナ設計 />
+[11] (117,364)<a class='flex items-center gap-3 rounded-lg px-3 py-3 text-card-foreground/70 transition-all hover:bg-primary/10 hover:text-primary' href='/dashboard/history' />
+	[12] (70,364)<span >履歴 />
+[13] (117,436)<a class='flex items-center gap-3 rounded-lg px-3 py-3 text-card-foreground/70 transition-all hover:bg-primary/10 hover:text-primary' href='/dashboard/settings' />
+	[14] (70,436)<span >設定 />
+[15] (117,509)<a class='flex items-center gap-3 rounded-lg px-3 py-3 text-card-foreground/70 transition-all hover:bg-primary/10 hover:text-primary' href='/admin' />
+	[16] (99,509)<span >管理者パネル />
+Proにアップグレード
+全ての機能を開放し、サポートチームへの無制限アクセスを手に入れましょう。
+[17] (117,929)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 w-full'>アップグレード />
+[18] (855,44)<button class='items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 hidden sm:flex'>アップグレード />
+[19] (960,44)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-10 w-10 rounded-full' id='radix-_r_c_'>ユーザーメニューを開く />
+	[20] (960,44)<span  />
+		[21] (960,44)<img  />
+	ユーザーメニューを開く
+そんな風に思っている方もいるかもしれません。でも大丈夫。
+このWH-1000XM5は、直感的に操作でき、その効果は誰でもすぐに実感できます。一度体験したら、もう手放せなくなるはずです。
+ぜひ、この機会にSONYのWH-1000XM5で、あなたの日常に「静寂」と「感動」をプラスしてみてください。きっと、毎日がもっと輝き出すはずですよ。
+同時投稿の詳細
+[22] (318,506)<button class='peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground' id='blogger' role='checkbox' />
+[23] (398,506)<label class='font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer flex items-center gap-1'>Blogger />
+	[24] (413,506)<div >Connected />
+[25] (514,506)<button class='peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground' id='threads' role='checkbox' />
+[26] (584,506)<label class='font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer flex items-center gap-1'>Threads />
+	[27] (604,506)<div >Linked />
+[28] (318,593)<button class='peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground' id='pinterest' role='checkbox' />
+[29] (383,593)<label class='font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer flex items-center gap-1'>Pinterest />
+	[30] (407,593)<div >Trial />
+[31] (486,593)<button class='peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground' id='wordpress' role='checkbox' />
+[32] (563,593)<label class='font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer flex items-center gap-1'>WordPress />
+	[33] (592,593)<div >Linked />
+[34] (318,680)<button class='peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground' id='hatena' role='checkbox' />
+[35] (381,680)<label class='font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer flex items-center gap-1'>はてな />
+	[36] (395,680)<div >Linked />
+[37] (482,680)<button class='peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground' id='rakutenRoom' role='checkbox' />
+[38] (576,680)<label class='font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm cursor-pointer flex items-center gap-1'>楽天Room />
+	[39] (596,680)<div >半自動(コピー) />
+選択した媒体に一括公開
+[40] (395,892)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background hover:text-accent-foreground h-10 px-4 py-2 border-primary/20 hover:bg-primary/5 text-primary'>下書きとしてローカル保存 />
+[41] (594,892)<a class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 flex items-center' href='https://hb.afl.rakuten.co.jp/hgc/g00sxgsm.txth5f8f.g00sxgsm.txth64eb/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsokutei%2F4548736132573%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsokutei%2Fi%2F10131162%2F&rafcid=wsc_i_is_0c33d277-a475-4b74-ba74-f26ec811a8cf'>楽天の商品ページ />
+AIトレンドアナライザー
+PinterestとThreadsでクリックされやすいトピックを見つけます。
+[42] (845,250)<input class='flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm' placeholder='例: 'サステナブルな暮らし'' />
+[43] (934,250)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10'>分析 />
+	分析
+上の欄にトピックを入力して、トレンドのコンテンツアイデアを見つけましょう。
+
+</current_dom>
