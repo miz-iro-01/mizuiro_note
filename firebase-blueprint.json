@@ -1,0 +1,102 @@
+{
+  "entities": {
+    "UserConfig": {
+      "title": "User Configuration",
+      "description": "Global settings for the user's Threads automation.",
+      "type": "object",
+      "properties": {
+        "geminiKey": { "type": "string" },
+        "timezone": { "type": "string" },
+        "threadsClientId": { "type": "string" },
+        "threadsClientSecret": { "type": "string" },
+        "isPaid": { "type": "boolean" },
+        "createdAt": { "type": "string" },
+        "role": { "type": "string", "enum": ["user", "admin"] }
+      }
+    },
+    "Character": {
+      "title": "Character Settings",
+      "description": "Defines the personality and tone of the AI poster.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "basicInfo": { "type": "string" },
+        "firstPerson": { "type": "string" },
+        "ending": { "type": "string" },
+        "tendency": { "type": "string" }
+      },
+      "required": ["name"]
+    },
+    "ThreadsAccount": {
+      "title": "Threads Account",
+      "description": "Linked Threads account information.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "threadsToken": { "type": "string" },
+        "threadsUserId": { "type": "string" },
+        "accountName": { "type": "string" },
+        "profilePic": { "type": "string" },
+        "createdAt": { "type": "object", "description": "Firestore Timestamp" },
+        "lastRefreshedAt": { "type": "object", "description": "Firestore Timestamp" }
+      },
+      "required": ["threadsToken", "threadsUserId", "accountName"]
+    },
+    "Schedule": {
+      "title": "Automation Schedule",
+      "description": "Defines when and how to post content.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string", "enum": ["fixed", "random"] },
+        "time": { "type": "string" },
+        "frequency": { "type": "number" },
+        "characterId": { "type": "string" },
+        "accountId": { "type": "string" },
+        "prompt": { "type": "string" },
+        "enabled": { "type": "boolean" },
+        "days": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["type", "characterId", "accountId", "prompt", "enabled", "days"]
+    },
+    "PostLog": {
+      "title": "Post Log",
+      "description": "History of manual and automated posts.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string", "enum": ["manual", "auto"] },
+        "status": { "type": "string", "enum": ["success", "error"] },
+        "text": { "type": "string" },
+        "message": { "type": "string" },
+        "timestamp": { "type": "object", "description": "Firestore Timestamp" },
+        "accountId": { "type": "string" },
+        "characterId": { "type": "string" }
+      },
+      "required": ["type", "status", "text", "timestamp", "accountId", "characterId"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserConfig",
+      "description": "User's global settings."
+    },
+    "/users/{userId}/characters/{charId}": {
+      "schema": "Character",
+      "description": "User's AI characters."
+    },
+    "/users/{userId}/accounts/{accId}": {
+      "schema": "ThreadsAccount",
+      "description": "User's linked Threads accounts."
+    },
+    "/users/{userId}/automations/{schedId}": {
+      "schema": "Schedule",
+      "description": "User's automation schedules."
+    },
+    "/users/{userId}/logs/{logId}": {
+      "schema": "PostLog",
+      "description": "User's post history logs."
+    }
+  }
+}

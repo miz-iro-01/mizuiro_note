@@ -1,0 +1,99 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // --------------------------------
+    // Helper Functions
+    // --------------------------------
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+    function isExistingDoc() {
+      return resource != null;
+    }
+    function isExistingOwner(userId) {
+      return isOwner(userId) && isExistingDoc();
+    }
+    function isAdmin() {
+      return isSignedIn() && (
+        request.auth.token.email == 'oumaumauma32@gmail.com' || 
+        request.auth.token.email == 'sl0wmugi9@gmail.com' || 
+        exists(/databases/$(database)/documents/roles_admin/$(request.auth.uid))
+      );
+    }
+
+    // --------------------------------
+    // User Data Collections
+    // --------------------------------
+    match /users/{userId} {
+      allow get: if isOwner(userId);
+      allow list: if false;
+      allow create: if isOwner(userId) && request.resource.data.id == userId;
+      allow update: if isOwner(userId) && request.resource.data.id == resource.data.id;
+      allow delete: if false;
+
+      // AI Personas
+      match /personas/{personaId} {
+        allow get: if isOwner(userId);
+        allow list: if isOwner(userId);
+        allow create: if isOwner(userId) && request.resource.data.userId == userId;
+        allow update: if isExistingOwner(userId) && request.resource.data.userId == resource.data.userId;
+        allow delete: if isExistingOwner(userId);
+      }
+
+      // Generated Posts
+      match /posts/{postId} {
+        allow get: if isOwner(userId);
+        allow list: if isOwner(userId);
+        allow create: if isOwner(userId) && request.resource.data.userId == userId;
+        allow update: if isExistingOwner(userId) && request.resource.data.userId == resource.data.userId;
+        allow delete: if isExistingOwner(userId);
+      }
+
+      // Activity Logs (New Consolidated Sub-collection)
+      match /activities/{activityId} {
+        allow get: if isOwner(userId);
+        allow list: if isOwner(userId);
+        allow create: if isOwner(userId) && request.resource.data.userId == userId;
+        allow update: if false; // 作業ログは改ざん不可
+        allow delete: if isExistingOwner(userId);
+      }
+
+      // Legacy Post History (Support for migration)
+      match /postHistory/{historyId} {
+        allow get, list, create, update, delete: if isOwner(userId);
+      }
+
+      // Studio Multi-Account Profiles
+      match /studioProfiles/{slotId} {
+        allow get, list: if isOwner(userId);
+        allow create, update: if isOwner(userId);
+        allow delete: if isOwner(userId);
+      }
+    }
+
+    // Legacy Global Activities (Cleanup)
+    match /activities/{activityId} {
+      allow read, create: if isSignedIn() && (resource == null || resource.data.userId == request.auth.uid);
+    }
+
+    // Admin & Announcements
+    match /announcements/{announcementId} {
+      allow get, list: if isSignedIn();
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /roles_admin/{userId} {
+      allow read, write: if false;
+    }
+
+    // System Configuration
+    match /system/{document=**} {
+      allow get: if isSignedIn();
+      allow write: if isAdmin();
+    }
+  }
+}

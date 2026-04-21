@@ -1,0 +1,5 @@
+{
+  "name": "Threads Auto-Poster",
+  "description": "Threadsへの自動投稿とGeminiによるコンテンツ生成をサポートするツールです。",
+  "requestFramePermissions": []
+}

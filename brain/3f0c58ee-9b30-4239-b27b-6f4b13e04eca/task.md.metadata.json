@@ -1,6 +1,0 @@
-{
-  "artifactType": "ARTIFACT_TYPE_TASK",
-  "summary": "OpenRouter 連携のロールバックと、高品質な Gemini 生成フローへの再構築タスク。UIの効率化（統合生成）は維持しつつ、依存関係を元の Google AI へ戻します。",
-  "updatedAt": "2026-04-13T23:36:59.308258Z",
-  "version": "5"
-}

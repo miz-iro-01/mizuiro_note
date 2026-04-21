@@ -1,0 +1,58 @@
+# dependencies
+node_modules/
+.pnp/
+.pnp.*
+.yarn/
+
+# next.js
+.next/
+out/
+
+# production
+build/
+dist/
+
+# misc
+.DS_Store
+*.pem
+*.log
+*.tsbuildinfo
+next-env.d.ts
+
+# env
+.env*
+
+# firebase
+firebase-debug.log
+firestore-debug.log
+
+# Antigravity system directories (everything except the project code)
+brain/
+conversations/
+knowledge/
+browser_recordings/
+context_state/
+code_tracker/
+html_artifacts/
+implicit/
+playground/
+prompting/
+scratch/
+annotations/
+.agents/
+.antigravityignore
+.idx/
+.modified
+.vscode/
+AGENTS.md
+[変更するファイルの絶対パスをここに記述します]
+installation_id
+mcp_config.json
+project.zip
+studio.json
+test-*.js
+
+# Keep implementation plan and task for now, but usually they shouldn't be in the repo either
+# implementation_plan.md
+# task.md
+# walkthrough.md

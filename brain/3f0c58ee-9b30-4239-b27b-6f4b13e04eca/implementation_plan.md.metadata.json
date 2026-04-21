@@ -1,7 +1,0 @@
-{
-  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
-  "summary": "アプリのソースコードから OpenRouter 連携を削除し、Google Gemini (直接) にロールバックします。ただし、プロンプトの質（サンプル記事の構成反映）と、SNS別の出力機能は維持し、アプリの純粋な品質向上のみを残します。",
-  "updatedAt": "2026-04-13T23:36:52.067351800Z",
-  "version": "3",
-  "requestFeedback": true
-}
