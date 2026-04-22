@@ -16,6 +16,7 @@ import {
   type GenerateBlogPostOutput,
 } from '@/ai/flows/generate-blog-post'
 import { Button } from '@/components/ui/button'
+import { GlassCard, MagicFlowText, ShinyButton } from '@/components/ui/design-system'
 import {
   Card,
   CardContent,
@@ -298,41 +299,54 @@ export default function PostGenerator({ selectedProduct, slotId = 1 }: PostGener
                 )}
                 />
             </div>
-            <Button type="submit" disabled={isLoading}>
+            <ShinyButton type="submit" disabled={isLoading} className="w-full md:w-auto h-12 shadow-primary/20">
                 {isLoading ? (
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                <Loader2 className="mr-2 h-5 w-5 animate-spin" />
                 ) : (
-                <Sparkles className="mr-2 h-4 w-4" />
+                <Sparkles className="mr-2 h-5 w-5" />
                 )}
-                投稿を生成
-            </Button>
+                <span className="text-lg">投稿を生成</span>
+            </ShinyButton>
             </form>
         </Form>
     )
   }
 
   return (
-    <div className="flex flex-col gap-8" id="post-generator">
-      <Card className="border-border/50 bg-card/60 backdrop-blur-sm">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <PenSquare className="h-6 w-6" /> AI投稿ジェネレーター
-          </CardTitle>
-          <CardDescription>
-            トピックとペルソナから魅力的なSNS投稿を作成します。商品を選択すると、トピックが自動入力されます。
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
+    <div className="flex flex-col gap-8 page-transition" id="post-generator">
+      <GlassCard className="border-border/40 overflow-hidden">
+        <div className="p-6 md:p-8 space-y-6">
+          <div className="flex items-center gap-3">
+            <div className="p-2 rounded-xl bg-primary/10 text-primary">
+              <PenSquare className="h-6 w-6" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold tracking-tight">AI記事スタジオ</h2>
+              <p className="text-sm text-muted-foreground">
+                トピックとペルソナから最高品質なコンテンツを生成します。
+              </p>
+            </div>
+          </div>
+          
+          <div className="pt-4 border-t border-border/40">
             {renderContent()}
-        </CardContent>
-      </Card>
+          </div>
+        </div>
+      </GlassCard>
+
       {isLoading && (
-         <Card className="border-border/50 bg-card/60 backdrop-blur-sm">
-           <CardContent className="flex items-center justify-center p-12">
-            <Loader2 className="h-8 w-8 animate-spin text-primary"/>
-            <p className="ml-4 text-muted-foreground">AIがコンテンツを生成中...</p>
-           </CardContent>
-         </Card>
+         <GlassCard className="border-primary/20 bg-primary/5 py-16">
+           <div className="flex flex-col items-center justify-center text-center space-y-4">
+             <div className="relative">
+               <div className="absolute inset-0 blur-xl bg-primary/20 rounded-full animate-pulse" />
+               <Loader2 className="h-12 w-12 animate-spin text-primary relative z-10"/>
+             </div>
+             <div className="space-y-1">
+               <MagicFlowText text="AIが最高の結果を紡いでいます..." className="text-xl font-medium text-primary" />
+               <p className="text-sm text-muted-foreground">数秒で「プロ仕様」の記事が完成します</p>
+             </div>
+           </div>
+         </GlassCard>
       )}
       {generatedBlog && generationPayload && (
         <BlogPostView 

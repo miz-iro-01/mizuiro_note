@@ -3,6 +3,7 @@
 import { useState, useMemo, useEffect } from 'react'
 import { marked } from 'marked'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
+import { GlassCard, ShinyButton } from '@/components/ui/design-system'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { Input } from '@/components/ui/input'
@@ -421,38 +422,42 @@ export default function BlogPostView({ blog, product, persona, userData, slotId 
   }
 
   return (
-    <Card className="border-border/50 bg-card/60 backdrop-blur-sm overflow-hidden">
-      <CardHeader className="bg-primary/5 border-b border-border/40">
-        <div className="flex items-center justify-between">
+    <GlassCard className="border-border/40 overflow-hidden page-transition shadow-2xl mb-12">
+      <div className="bg-primary/5 border-b border-border/40 p-6 md:p-8">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="space-y-1">
-            <CardTitle className="flex items-center gap-2">
-              <FileText className="h-5 w-5 text-primary" />
-              {isPreviewMode ? 'コンテンツのプレビュー' : '生成されたブログ記事'}
-            </CardTitle>
-            <CardDescription>
+            <div className="flex items-center gap-2">
+              <div className="p-2 rounded-lg bg-primary/10 text-primary">
+                <FileText className="h-5 w-5" />
+              </div>
+              <h3 className="text-xl font-bold tracking-tight">
+                {isPreviewMode ? 'プレミアム・プレビュー' : '記事コンテンツの編集'}
+              </h3>
+            </div>
+            <p className="text-sm text-muted-foreground ml-9">
               {isPreviewMode 
-                ? '各プラットフォームでの実際の見え方を確認しましょう。' 
-                : '楽天商品の情報を元にAIが構成したブログ用コンテンツです。'}
-            </CardDescription>
+                ? '読者に届く「実際の姿」を確認しましょう。' 
+                : 'AIが生成した構成を自由に微調整できます。'}
+            </p>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 ml-9 md:ml-0">
             <Button 
               variant={isPreviewMode ? "default" : "outline"} 
               size="sm" 
               onClick={() => setIsPreviewMode(!isPreviewMode)}
-              className="gap-2"
+              className="gap-2 px-4 h-9 rounded-full"
             >
               {isPreviewMode ? <Edit3 className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
-              {isPreviewMode ? '編集に戻る' : 'プレビューを表示'}
+              {isPreviewMode ? '編集モード' : 'プレビュー'}
             </Button>
-            <Button variant="outline" size="sm" onClick={handleCopy}>
-              {copied ? <Check className="h-4 w-4 mr-2" /> : <Clipboard className="h-4 w-4 mr-2" />}
+            <Button variant="outline" size="sm" onClick={handleCopy} className="gap-2 px-4 h-9 rounded-full">
+              {copied ? <Check className="h-4 w-4" /> : <Clipboard className="h-4 w-4" />}
               {copied ? 'コピー済み' : '全文コピー'}
             </Button>
           </div>
         </div>
-      </CardHeader>
-      <CardContent className="p-6 space-y-6">
+      </div>
+      <div className="p-6 md:p-8 space-y-8 bg-card/30">
         {isPreviewMode ? (
           <Tabs defaultValue="blog" className="w-full">
             <TabsList className="grid w-full grid-cols-3 mb-6 bg-muted/30">
@@ -511,78 +516,70 @@ export default function BlogPostView({ blog, product, persona, userData, slotId 
         )}
 
         {/* 一括投稿セクション */}
-        <div className="space-y-4 p-4 rounded-xl border border-primary/20 bg-primary/5 shadow-inner">
-          <div className="flex items-center gap-2 mb-2">
-            <Share2 className="h-4 w-4 text-primary" />
-            <span className="text-sm font-semibold">同時投稿の詳細</span>
+        <div className="space-y-6 p-6 rounded-2xl border border-primary/20 bg-primary/5 shadow-inner">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Share2 className="h-5 w-5 text-primary" />
+              <span className="text-lg font-bold">同時公開設定</span>
+            </div>
+            <Badge variant="outline" className="bg-white/50 border-primary/20">複数媒体へ一括配信</Badge>
           </div>
           
-          <div className="flex flex-wrap gap-6">
-            <div className="flex items-center space-x-2 bg-white/50 p-2 rounded-lg pr-4">
-              <Checkbox id="blogger" checked={selectedPlatforms.blogger} onCheckedChange={() => togglePlatform('blogger')} />
-              <Label htmlFor="blogger" className="text-sm cursor-pointer flex items-center gap-1">
-                Blogger <Badge variant={(userData?.integrations?.blogger?.isConnected || userData?.bloggerEmail) ? "success" : "outline"} className="scale-75 origin-left">{(userData?.integrations?.blogger?.isConnected || userData?.bloggerEmail) ? 'Connected' : 'Link'}</Badge>
-              </Label>
-            </div>
-            
-            <div className="flex items-center space-x-2 bg-white/50 p-2 rounded-lg pr-4">
-              <Checkbox id="threads" checked={selectedPlatforms.threads} onCheckedChange={() => togglePlatform('threads')} />
-              <Label htmlFor="threads" className="text-sm cursor-pointer flex items-center gap-1">
-                Threads <Badge variant={userData?.threadsAccessToken ? "success" : "outline"} className="scale-75 origin-left">{userData?.threadsAccessToken ? 'Linked' : 'Link'}</Badge>
-              </Label>
-            </div>
-
-            <div className="flex items-center space-x-2 bg-white/50 p-2 rounded-lg pr-4">
-              <Checkbox id="pinterest" checked={selectedPlatforms.pinterest} onCheckedChange={() => togglePlatform('pinterest')} />
-              <Label htmlFor="pinterest" className="text-sm cursor-pointer flex items-center gap-1">
-                Pinterest <Badge variant="secondary" className="scale-75 origin-left opacity-70">Trial</Badge>
-              </Label>
-            </div>
-
-            <div className="flex items-center space-x-2 bg-white/50 p-2 rounded-lg pr-4">
-              <Checkbox id="wordpress" checked={selectedPlatforms.wordpress} onCheckedChange={() => togglePlatform('wordpress')} />
-              <Label htmlFor="wordpress" className="text-sm cursor-pointer flex items-center gap-1">
-                WordPress <Badge variant={userData?.wordpressUrl && userData?.wordpressAppPassword ? "success" : "outline"} className="scale-75 origin-left">{userData?.wordpressUrl && userData?.wordpressAppPassword ? 'Linked' : 'Setup'}</Badge>
-              </Label>
-            </div>
-
-            <div className="flex items-center space-x-2 bg-white/50 p-2 rounded-lg pr-4">
-              <Checkbox id="hatena" checked={selectedPlatforms.hatena} onCheckedChange={() => togglePlatform('hatena')} />
-              <Label htmlFor="hatena" className="text-sm cursor-pointer flex items-center gap-1">
-                はてな <Badge variant={((profileData || userData)?.hatenaId && (profileData || userData)?.hatenaApiKey) || (profileData || userData)?.hatenaEmail ? "success" : "outline"} className="scale-75 origin-left">{((profileData || userData)?.hatenaId && (profileData || userData)?.hatenaApiKey) || (profileData || userData)?.hatenaEmail ? 'Linked' : 'Setup'}</Badge>
-              </Label>
-            </div>
-
-            <div className="flex items-center space-x-2 bg-white/50 p-2 rounded-lg pr-4">
-              <Checkbox id="rakutenRoom" checked={selectedPlatforms.rakutenRoom} onCheckedChange={() => togglePlatform('rakutenRoom')} />
-              <Label htmlFor="rakutenRoom" className="text-sm cursor-pointer flex items-center gap-1">
-                楽天Room <Badge variant="secondary" className="scale-75 origin-left opacity-70 border-pink-200 bg-pink-50 text-pink-700">半自動(コピー)</Badge>
-              </Label>
-            </div>
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { id: 'blogger', label: 'Blogger', status: (userData?.integrations?.blogger?.isConnected || userData?.bloggerEmail) ? 'success' : 'outline', text: (userData?.integrations?.blogger?.isConnected || userData?.bloggerEmail) ? 'Linked' : 'Setup' },
+              { id: 'threads', label: 'Threads', status: userData?.threadsAccessToken ? 'success' : 'outline', text: userData?.threadsAccessToken ? 'Linked' : 'Link' },
+              { id: 'pinterest', label: 'Pinterest', status: 'secondary', text: 'Trial' },
+              { id: 'wordpress', label: 'WordPress', status: userData?.wordpressUrl && userData?.wordpressAppPassword ? 'success' : 'outline', text: userData?.wordpressUrl && userData?.wordpressAppPassword ? 'Linked' : 'Setup' },
+              { id: 'hatena', label: 'はてな', status: ((profileData || userData)?.hatenaId && (profileData || userData)?.hatenaApiKey) || (profileData || userData)?.hatenaEmail ? 'success' : 'outline', text: ((profileData || userData)?.hatenaId && (profileData || userData)?.hatenaApiKey) || (profileData || userData)?.hatenaEmail ? 'Linked' : 'Setup' },
+              { id: 'rakutenRoom', label: '楽天Room', status: 'secondary', text: 'Copy', customBadge: true }
+            ].map((p) => (
+              <div key={p.id} className="flex items-center justify-between space-x-2 bg-white/40 p-3 rounded-xl border border-border/20 transition-all hover:bg-white/60">
+                <div className="flex items-center space-x-2">
+                  <Checkbox 
+                    id={p.id} 
+                    checked={selectedPlatforms[p.id as keyof typeof selectedPlatforms]} 
+                    onCheckedChange={() => togglePlatform(p.id)} 
+                  />
+                  <Label htmlFor={p.id} className="text-sm font-medium cursor-pointer">{p.label}</Label>
+                </div>
+                <Badge variant={p.status as any} className={cn("text-[10px] px-1.5 py-0", p.customBadge && "bg-pink-50 text-pink-700 border-pink-100")}>
+                  {p.text}
+                </Badge>
+              </div>
+            ))}
           </div>
 
-          <Button 
-            className="w-full h-12 text-lg font-bold bg-primary hover:bg-primary/90 text-white shadow-xl shadow-primary/20 transition-all active:scale-[0.98]"
+          <ShinyButton 
+            className="w-full h-14 text-xl font-bold shadow-2xl flex items-center justify-center gap-3"
             onClick={handlePublishAll}
             disabled={isPosting}
           >
-            {isPosting ? <Loader2 className="mr-2 h-5 w-5 animate-spin" /> : <Send className="mr-2 h-5 w-5" />}
-            選択した媒体に一括公開
-          </Button>
+            {isPosting ? <Loader2 className="h-6 w-6 animate-spin" /> : <Send className="h-6 w-6" />}
+            <span>最高品質の記事を一括公開</span>
+          </ShinyButton>
         </div>
 
         {/* サポートアクション */}
-        <div className="flex flex-wrap gap-3 pt-2">
-          <Button variant="outline" className="border-primary/20 hover:bg-primary/5 text-primary">
-            <Save className="mr-2 h-4 w-4" /> 下書きとしてローカル保存
-          </Button>
-          <Button variant="ghost" asChild>
-            <a href={product.itemUrl} target="_blank" rel="noopener noreferrer" className="flex items-center">
-              <ExternalLink className="mr-2 h-4 w-4" /> 楽天の商品ページ
-            </a>
-          </Button>
+        <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-border/40">
+          <div className="flex gap-2">
+            <Button variant="outline" className="rounded-full border-primary/20 hover:bg-primary/5 text-primary gap-2">
+              <Save className="h-4 w-4" /> 保存
+            </Button>
+            <Button variant="ghost" asChild className="rounded-full gap-2">
+              <a href={product.itemUrl} target="_blank" rel="noopener noreferrer">
+                <ExternalLink className="h-4 w-4" /> 楽天市場
+              </a>
+            </Button>
+          </div>
+          <div className="flex items-center gap-2 text-muted-foreground">
+            <ShoppingBag className="h-4 w-4" />
+            <span className="text-xs font-medium">価格: {product.itemPrice.toLocaleString()}円</span>
+          </div>
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </GlassCard>
+  )
+}
   )
 }

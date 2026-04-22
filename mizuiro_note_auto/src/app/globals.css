@@ -2,87 +2,126 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer base {
   :root {
-    --background: 210 100% 98%;
-    --foreground: 222 39% 17%;
+    /* プレミアムな水色 (MIZUIRO) システム */
+    --background: 190 100% 98%;
+    --foreground: 210 40% 10%;
+    
     --card: 0 0% 100%;
-    --card-foreground: 222 39% 17%;
+    --card-foreground: 210 40% 10%;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 222 39% 17%;
-    --primary: 204 93% 60%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222 39% 17%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 222 39% 45.1%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222 39% 17%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 210 40% 90%;
-    --input: 210 40% 94%;
-    --ring: 204 93% 60%;
-    --chart-1: 204 93% 60%;
-    --chart-2: 222 39% 17%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 222 39% 17%;
-    --sidebar-primary: 204 93% 60%;
-    --sidebar-primary-foreground: 210 40% 98%;
-    --sidebar-accent: 210 40% 96.1%;
-    --sidebar-accent-foreground: 222 39% 17%;
-    --sidebar-border: 210 40% 90%;
-    --sidebar-ring: 204 93% 60%;
+    --popover-foreground: 210 40% 10%;
+    
+    --primary: 199 89% 48%; /* 洗練されたシアンブルー */
+    --primary-foreground: 190 100% 98%;
+    
+    --secondary: 190 60% 94%;
+    --secondary-foreground: 210 40% 15%;
+    
+    --muted: 190 40% 94%;
+    --muted-foreground: 210 15% 40%;
+    
+    --accent: 199 89% 92%;
+    --accent-foreground: 199 89% 30%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 190 40% 90%;
+    --input: 190 40% 90%;
+    --ring: 199 89% 48%;
+    
+    --radius: 1rem; /* より柔らかい印象に */
+    
+    /* グラスモルフィズム用 */
+    --glass-background: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.5);
   }
+
   .dark {
-    --background: 222 39% 10%;
-    --foreground: 210 100% 98%;
-    --card: 222 39% 17%;
-    --card-foreground: 210 100% 98%;
-    --popover: 222 39% 17%;
-    --popover-foreground: 210 100% 98%;
-    --primary: 204 93% 60%;
-    --primary-foreground: 222 39% 17%;
-    --secondary: 222 39% 25%;
-    --secondary-foreground: 210 100% 98%;
-    --muted: 222 39% 25%;
-    --muted-foreground: 210 40% 63.9%;
-    --accent: 222 39% 25%;
-    --accent-foreground: 210 100% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 222 39% 25%;
-    --input: 222 39% 25%;
-    --ring: 204 93% 60%;
-    --chart-1: 204 93% 60%;
-    --chart-2: 210 100% 98%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --sidebar-background: 222 39% 10%;
-    --sidebar-foreground: 210 100% 98%;
-    --sidebar-primary: 204 93% 60%;
-    --sidebar-primary-foreground: 222 39% 17%;
-    --sidebar-accent: 222 39% 25%;
-    --sidebar-accent-foreground: 210 100% 98%;
-    --sidebar-border: 222 39% 25%;
-    --sidebar-ring: 204 93% 60%;
+    --background: 210 40% 4%;
+    --foreground: 190 100% 98%;
+    
+    --card: 215 30% 8%;
+    --card-foreground: 190 100% 98%;
+    
+    --popover: 215 30% 8%;
+    --popover-foreground: 190 100% 98%;
+    
+    --primary: 199 89% 60%;
+    --primary-foreground: 210 40% 4%;
+    
+    --secondary: 215 30% 12%;
+    --secondary-foreground: 190 100% 98%;
+    
+    --muted: 215 30% 12%;
+    --muted-foreground: 210 15% 70%;
+    
+    --accent: 199 89% 15%;
+    --accent-foreground: 199 89% 70%;
+    
+    --border: 215 30% 15%;
+    --input: 215 30% 15%;
+    --ring: 199 89% 60%;
+
+    /* ダークモード・グラスモルフィズム */
+    --glass-background: rgba(15, 20, 30, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.1);
   }
 }
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border selection:bg-primary/20 selection:text-primary;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(199, 89%, 60%, 0.1) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(180, 100%, 70%, 0.1) 0px, transparent 50%);
+    background-attachment: fixed;
   }
 }
+
+@layer components {
+  .glass-card {
+    background: var(--glass-background);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    @apply shadow-xl shadow-primary/5 rounded-2xl;
+  }
+
+  .glass-header {
+    background: rgba(var(--background), 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    @apply sticky top-0 z-50 border-b border-border/40;
+  }
+
+  .premium-gradient {
+    @apply bg-gradient-to-br from-primary via-primary/90 to-primary/80 text-primary-foreground;
+    box-shadow: 0 4px 20px -5px rgba(var(--primary), 0.4);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 15px rgba(var(--primary), 0.3);
+  }
+}
+
+/* スムーズなスクロールとトランジション */
+html {
+  scroll-behavior: smooth;
+}
+
+.page-transition {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
